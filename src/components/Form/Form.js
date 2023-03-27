@@ -10,15 +10,17 @@ class Form extends React.Component {
 
    onSubmit = (event) => {
     event.preventDefault();
-
-    if((this.state.name.length || this.state.surname.length) < 3) {
-      this.setState({ error: "С твоими данными что то не так ;(" })
-    } else {
-       alert(`Добро пожаловать ${this.state.name} ${this.state.surname}`)
-      } 
   
-      
-    console.log(this.state.name, this.state.surname)
+    if(this.state.name.length <= 3 || this.state.surname.length <= 3) {
+      this.setState({ error: "С твоими данными что то не так ;(" });
+    } else {
+      this.setState( {name: ""} )
+       this.setState( {surname: ""} )
+       this.setState( {error: ""} )  
+      //  alert(`Добро пожаловать ${this.state.name} ${this.state.surname}`)    
+      }   
+
+    console.log(this.state.name, this.state.surname);
    }
 
    changeValue = (event) => {
@@ -49,7 +51,7 @@ render() {
         <button type="submit">Submit</button>
         <div>
           {this.state.error}
-        </div>
+        </div> 
     </form>
    
   </div>
