@@ -14,10 +14,10 @@ class Form extends React.Component {
     if(this.state.name.length <= 3 || this.state.surname.length <= 3) {
       this.setState({ error: "С твоими данными что то не так ;(" });
     } else {
-      this.setState( {name: ""} )
-       this.setState( {surname: ""} )
-       this.setState( {error: ""} )  
-      //  alert(`Добро пожаловать ${this.state.name} ${this.state.surname}`)    
+      alert(`Добро пожаловать ${this.state.name} ${this.state.surname}`)
+      this.setState( {name: "", surname: "", error: ""})
+ 
+    
       }   
 
     console.log(this.state.name, this.state.surname);
